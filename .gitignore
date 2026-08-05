@@ -1,0 +1,20 @@
+
+# Dependências
+node_modules/
+
+# Variáveis de ambiente
+.env
+
+# Prisma
+generated/
+
+# Imagens
+src/uploads/
+uploads/
+
+# Logs
+*.log
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
