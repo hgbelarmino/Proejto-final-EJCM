@@ -1,17 +1,13 @@
 const express = require("express");
 
+const userRoutes = require("./routes/user.routes");
+
 const app = express();
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  return res.json({
-    mensagem: "API Elektro funcionando!"
-  });
-});
+app.use(userRoutes);
 
-const PORT = 3000;
-
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+app.listen(3000, () => {
+  console.log("Servidor rodando na porta 3000");
 });
