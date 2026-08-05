@@ -1,5 +1,8 @@
 const { PrismaClient } = require("@prisma/client");
+
 const bcrypt = require("bcrypt");
+
+const jwt = require("jsonwebtoken");
 
 const prisma = new PrismaClient();
 
@@ -202,10 +205,57 @@ async function deleteUser(req, res) {
   }
 }
 
+async function loginUser(req, res) {
+  try {
+    const { email, senha } = req.body;
+
+    const usuario = await prisma.user.findUnique({
+      where: { email }
+    });
+
+    if (!usuario) {
+      return res.status(401).json({
+        erro: "E-mail ou senha inválidos."
+      });
+    }
+
+    const senhaCorreta = await bcrypt.compare(senha, usuario.senha);
+
+    if (!senhaCorreta) {
+      return res.status(401).json({
+        erro: "E-mail ou senha inválidos."
+      });
+    }
+
+    const token = jwt.sign(
+      {
+        id: usuario.id,
+        email: usuario.email
+      },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: "1d"
+      }
+    );
+
+    return res.json({
+      token
+    });
+  } catch (error) {
+    console.error(error);
+
+    return res.status(500).json({
+      erro: "Erro ao realizar login."
+    });
+  }
+}
+
+
 module.exports = {
   createUser,
   listUsers,
   getUserById,
   updateUser,
-  deleteUser
+  deleteUser,
+  loginUser
 };
