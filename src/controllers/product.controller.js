@@ -26,6 +26,7 @@ async function createProduct(req, res) {
                 preco: Number(preco),
                 descricao,
                 estado,
+                imagem: req.file ? req.file.filename: null,
                 userId
             }
         });
