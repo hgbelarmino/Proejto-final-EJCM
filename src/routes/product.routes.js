@@ -6,6 +6,8 @@ const authMiddleware = require("../middlewares/auth.middleware");
 
 const validateProduct = require("../middlewares/validateProduct");
 
+const upload = require("../middlewares/upload.middleware");
+
 const router = express.Router();
 
 console.log(
@@ -15,8 +17,10 @@ console.log(
 
 router.post("/produtos",
     authMiddleware,
+    upload.single("imagem"),
     validateProduct,
-    productController.createProduct);
+    productController.createProduct
+);
 
 router.get("/produtos", productController.listProducts);
 

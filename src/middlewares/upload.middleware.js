@@ -2,32 +2,36 @@ const multer = require("multer");
 const path = require("path");
 
 const storage = multer.diskStorage({
-    destination(req, file, cb) {
-        cb(null, "src/uploads");
+    destination(req, file, callback) {
+        callback(null, "src/uploads");
     },
 
-    filename(req, file, cb) {
+    filename(req, file, callback) {
         const nome = 
         Date.now() +
         "-" +
         Math.round(Math.random() * 1e9) +
         path.extname(file.originalname);
-        cb(null, nome);
+
+        callback(null, nome);
     }
 });
 
-const fileFilter = (req, file, cb) => {
+const fileFilter = (req, file, callback) => {
     const tiposPermitidos = [
         "image/jpeg",
         "image/png",
         "image/gif",
+        "image/webp"
     ];
 
     if (!tiposPermitidos.includes(file.mimetype)) {
-        return cb(new Error("Tipo de arquivo não permitido."));
+        return callback(
+            new Error("Tipo de arquivo não permitido.")
+        );
     }
 
-    cb(null, true);
+    callback(null, true);
 };
 
 const upload = multer({
