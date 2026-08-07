@@ -1,0 +1,748 @@
+{
+  "info": {
+    "_postman_id": "d6e6d019-3c23-4bbf-8df1-a947a607c783",
+    "name": "Elektro APi",
+    "description": "Documentação das rotas geradas pela API do projeto Elektro.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57162557",
+    "_collection_link": "https://go.postman.co/collection/57162557-d6e6d019-3c23-4bbf-8df1-a947a607c783?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Autenticação",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"adm@elektro.com\",\r\n    \"senha\": \"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/login",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Usuários",
+      "item": [
+        {
+          "name": "Criar usuário",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome\": \"Usuario Teste\",\r\n    \"email\": \"teste@elektro.com\",\r\n    \"senha\": \"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/usuarios",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "usuarios"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Usuário criado com sucesso",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nome\": \"Usuario Teste\",\r\n    \"email\": \"teste@elektro.com\",\r\n    \"senha\": \"123456\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseURL}}/usuarios",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "path": [
+                    "usuarios"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "98"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"62-0WxlVOe1ihJQy1mbIkqN+W2JQ8w\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 07 Aug 2026 20:17:47 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 2,\n    \"nome\": \"Usuario Teste\",\n    \"email\": \"teste@elektro.com\",\n    \"createdAt\": \"2026-08-07T20:17:47.073Z\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Listar usuários",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome\": \"Usuario Teste\",\r\n    \"email\": \"teste@elektro.com\",\r\n    \"senha\": \"123456\"\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/usuarios",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "usuarios"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Usuários listados com sucesso",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nome\": \"Usuario Teste\",\r\n    \"email\": \"teste@elektro.com\",\r\n    \"senha\": \"123456\"\r\n}"
+                },
+                "url": {
+                  "raw": "{{baseURL}}/usuarios",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "path": [
+                    "usuarios"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "205"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"cd-MSBETCS7+58lKR/f6vl4UcLl3B0\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 07 Aug 2026 20:18:25 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": 1,\n        \"nome\": \"Administrador Elektro\",\n        \"email\": \"adm@elektro.com\",\n        \"createdAt\": \"2026-08-07T19:43:59.816Z\"\n    },\n    {\n        \"id\": 2,\n        \"nome\": \"Usuario Teste\",\n        \"email\": \"teste@elektro.com\",\n        \"createdAt\": \"2026-08-07T20:17:47.073Z\"\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Buscar usuário por ID",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome\": \"Usuario Teste\",\r\n    \"email\": \"teste@elektro.com\",\r\n    \"senha\": \"123456\"\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/usuarios/1",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "usuarios",
+                "1"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Busca realizada com sucesso",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nome\": \"Usuario Teste\",\r\n    \"email\": \"teste@elektro.com\",\r\n    \"senha\": \"123456\"\r\n}"
+                },
+                "url": {
+                  "raw": "{{baseURL}}/usuarios/2",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "path": [
+                    "usuarios",
+                    "2"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "98"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"62-0WxlVOe1ihJQy1mbIkqN+W2JQ8w\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 07 Aug 2026 20:21:08 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 2,\n    \"nome\": \"Usuario Teste\",\n    \"email\": \"teste@elektro.com\",\n    \"createdAt\": \"2026-08-07T20:17:47.073Z\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Atualizar usuário",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome\": \"Administrador Elektro Atualizado\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/usuarios/1",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "usuarios",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir usuário",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome\": \"Administrador Elektro Atualizado\"\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/usuarios/1",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "usuarios",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Produtos",
+      "item": [
+        {
+          "name": "Criar produto",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "nome",
+                  "value": "Celular Samsung S10",
+                  "type": "text",
+                  "uuid": "e566a39b-fc6b-4d66-adf3-d4edabefb0d1"
+                },
+                {
+                  "key": "descricao",
+                  "value": "Celular seminovo em excelente estado",
+                  "type": "text",
+                  "uuid": "3e888149-9414-4ec7-8d10-a307e7a1356b"
+                },
+                {
+                  "key": "preco",
+                  "value": "2500",
+                  "type": "text",
+                  "uuid": "71a9be2e-8b0e-46ac-b93a-2b9ad8374c57"
+                },
+                {
+                  "key": "estado",
+                  "value": "Seminovo",
+                  "type": "text",
+                  "uuid": "e53c72d6-9b54-481e-bcd0-fd46fa20ec4d"
+                },
+                {
+                  "key": "imagem",
+                  "type": "file",
+                  "uuid": "e511c687-b270-401d-8215-aba746d1d2c6",
+                  "src": "/C:/Users/Hugo/Downloads/samsung s10 - Pesquisa Google.html"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseURL}}/produtos",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "produtos"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Produto criado com sucesso",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "nome",
+                      "value": "Celular Samsung S10",
+                      "type": "text",
+                      "uuid": "e566a39b-fc6b-4d66-adf3-d4edabefb0d1"
+                    },
+                    {
+                      "key": "descricao",
+                      "value": "Celular seminovo em excelente estado",
+                      "type": "text",
+                      "uuid": "3e888149-9414-4ec7-8d10-a307e7a1356b"
+                    },
+                    {
+                      "key": "preco",
+                      "value": "2500",
+                      "type": "text",
+                      "uuid": "71a9be2e-8b0e-46ac-b93a-2b9ad8374c57"
+                    },
+                    {
+                      "key": "estado",
+                      "value": "Seminovo",
+                      "type": "text",
+                      "uuid": "e53c72d6-9b54-481e-bcd0-fd46fa20ec4d"
+                    },
+                    {
+                      "key": "imagem",
+                      "type": "file",
+                      "uuid": "e511c687-b270-401d-8215-aba746d1d2c6",
+                      "src": "/C:/Users/Hugo/Downloads/s10.png"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{baseURL}}/produtos",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "path": [
+                    "produtos"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "210"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"d2-MOXtnflW9XjQMvAfpcYkQ5BlEOg\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 07 Aug 2026 20:28:11 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"nome\": \"Celular Samsung S10\",\n    \"preco\": 2500,\n    \"descricao\": \"Celular seminovo em excelente estado\",\n    \"estado\": \"Seminovo\",\n    \"imagem\": \"1786134491557-400469341.png\",\n    \"createdAt\": \"2026-08-07T20:28:11.605Z\",\n    \"userId\": 1\n}"
+            }
+          ]
+        },
+        {
+          "name": "Listar produtos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/produtos",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "produtos"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Produtos listados com sucesso",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseURL}}/produtos",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "path": [
+                    "produtos"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "288"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"120-ynetgqS/PYnAjOoUnfvFIJs0idI\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 07 Aug 2026 20:45:22 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": 1,\n        \"nome\": \"Celular Samsung S10\",\n        \"preco\": 2500,\n        \"descricao\": \"Celular seminovo em excelente estado\",\n        \"estado\": \"Seminovo\",\n        \"imagem\": \"1786134491557-400469341.png\",\n        \"createdAt\": \"2026-08-07T20:28:11.605Z\",\n        \"userId\": 1,\n        \"usuario\": {\n            \"id\": 1,\n            \"nome\": \"Administrador Elektro\",\n            \"email\": \"adm@elektro.com\"\n        }\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Buscar produto por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/produtos/1",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "produtos",
+                "1"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Busca realizada com sucesso",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseURL}}/produtos/1",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "path": [
+                    "produtos",
+                    "1"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "286"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"11e-KdwAVGkwTpKM/JYCEQjkhbSJ3l4\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 07 Aug 2026 20:28:28 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"nome\": \"Celular Samsung S10\",\n    \"preco\": 2500,\n    \"descricao\": \"Celular seminovo em excelente estado\",\n    \"estado\": \"Seminovo\",\n    \"imagem\": \"1786134491557-400469341.png\",\n    \"createdAt\": \"2026-08-07T20:28:11.605Z\",\n    \"userId\": 1,\n    \"usuario\": {\n        \"id\": 1,\n        \"nome\": \"Administrador Elektro\",\n        \"email\": \"adm@elektro.com\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Atualizar produto",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome\": \"Celular Samsung S10 Atualizado\",\r\n    \"descricao\": \"Celular usado em excelente estado.\",\r\n    \"preco\": 2200,\r\n    \"estado\": \"Usado\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/produtos/1",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "produtos",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir produto",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/produtos/1",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "produtos",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseURL",
+      "value": ""
+    },
+    {
+      "key": "token",
+      "secret": true
+    }
+  ]
+}
